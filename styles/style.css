@@ -1,0 +1,103 @@
+:root {
+    --font-header: "Bricolage Grotesque", sans-serif;
+    --font-header-weight: 300;
+    --font-body: "Work Sans", sans-serif;
+    --font-body-weight: 400;
+    --clr-background: #FEF9F2;
+    --clr-option-blue: #66a5d8;
+    --clr-option-green: 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--clr-background);
+}
+
+.welcome {
+    width: 90%;
+    margin-inline: auto;
+    min-height: 700px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.welcome .msg-welcome {
+    width: 55%;
+    height: auto;
+}
+
+.welcome .msg-welcome h1 {
+    font-family: var(--font-header);
+    font-size: 6rem;
+}
+
+.welcome .msg-welcome p {
+    font-family: var(--font-body);
+    font-size: 1.3rem;
+}
+
+.welcome .msg-welcome .btn-explore {
+    width: 160px;
+    height: 40px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--clr-option-blue);
+    color: #fff;
+    font-size: 1rem;
+    font-family: var(--font-header);
+    cursor: pointer;
+    transition: .2s ease;
+
+    &:hover {
+        background-color: #95c7f0;
+    }
+}
+
+/* Add this CSS to your existing style.css file */
+
+/* Initial state of elements before animation */
+.welcome {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .6s ease-out, transform .6s ease-out;
+}
+
+/* Final state of elements after animation */
+.welcome.reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 968px) {
+    .welcome {
+        width: 90%;
+        flex-direction: column;
+    }
+
+    .welcome .msg-welcome {
+        margin-top: 90px;
+        width: 100%;
+    }
+
+    .welcome .msg-welcome h1 {
+        font-size: 3rem;
+    }
+    .welcome .msg-welcome p {
+        margin-top: 50px;
+        font-size: 1.1rem;
+    }
+    .welcome .msg-welcome .btn-explore {
+        height: 35px;
+        font-size: .9rem;
+    }
+    .welcome img {
+        margin-top: 70px;
+        width: 300px;
+    }
+}
